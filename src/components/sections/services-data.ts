@@ -1,0 +1,46 @@
+import {
+  Image as ImageIcon,
+  PanelsTopLeft,
+  Package,
+  Layers,
+  PaintBucket,
+  Paintbrush,
+  Grid3x3,
+  Blinds,
+  PanelTop,
+  ChefHat,
+  DoorClosed,
+  Tv,
+  Sofa,
+  BedDouble,
+  Building2,
+  Store,
+  Hammer,
+  Armchair,
+  type LucideIcon,
+} from "lucide-react";
+import { services, type Service } from "@/lib/site-config";
+
+export const serviceIcons: Record<Service, LucideIcon> = {
+  Wallpapers: ImageIcon,
+  "PVC Wall Panels": PanelsTopLeft,
+  "Kitchen Trolleys": Package,
+  "POP Work": Layers,
+  "Designer Paints": PaintBucket,
+  "Texture Paints": Paintbrush,
+  "Wooden Flooring": Grid3x3,
+  "Roller Blinds": Blinds,
+  "Roman Blinds": PanelTop,
+  "False Ceiling": PanelsTopLeft,
+  "Modular Kitchen": ChefHat,
+  Wardrobes: DoorClosed,
+  "TV Units": Tv,
+  "Living Room Interior": Sofa,
+  "Bedroom Interior": BedDouble,
+  "Office Interior": Building2,
+  "Commercial Interior": Store,
+  "Home Renovation": Hammer,
+  "Custom Furniture": Armchair,
+};
+
+export const servicesList = services;
