@@ -11,6 +11,7 @@ import ProcessTimeline from "@/components/sections/ProcessTimeline";
 import Statistics from "@/components/sections/Statistics";
 import Brands from "@/components/sections/Brands";
 import Testimonials from "@/components/sections/Testimonials";
+import BudgetEstimator from "@/components/sections/BudgetEstimator";
 import FAQ from "@/components/sections/FAQ";
 import Contact from "@/components/sections/Contact";
 
@@ -29,6 +30,7 @@ export default function Home() {
       <Statistics />
       <Brands />
       <Testimonials />
+      <BudgetEstimator />
       <FAQ />
       <Contact />
       <Footer />

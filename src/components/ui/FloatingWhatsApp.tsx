@@ -41,8 +41,13 @@ export default function FloatingWhatsApp() {
           />
 
           {/* Desktop hover tooltip */}
-          <span className="pointer-events-none absolute right-full mr-4 top-1/2 -translate-y-1/2 hidden whitespace-nowrap rounded-sm glass px-4 py-2 text-xs tracking-[0.1em] text-ivory opacity-0 translate-x-2 transition-all duration-300 ease-luxury group-hover:opacity-100 group-hover:translate-x-0 sm:block">
-            Chat on WhatsApp
+          <span className="pointer-events-none absolute right-full mr-4 top-1/2 -translate-y-1/2 hidden flex-col items-end gap-0.5 whitespace-nowrap rounded-sm glass px-4 py-2 opacity-0 translate-x-2 transition-all duration-300 ease-luxury group-hover:opacity-100 group-hover:translate-x-0 sm:flex">
+            <span className="text-xs tracking-[0.1em] text-ivory">
+              Chat on WhatsApp
+            </span>
+            <span className="text-[0.65rem] tracking-wide text-gold">
+              Typically replies within an hour
+            </span>
           </span>
         </motion.a>
       </div>

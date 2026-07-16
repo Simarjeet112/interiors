@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { navLinks } from "@/lib/nav-links";
 import { getWhatsAppLink } from "@/lib/site-config";
 import MobileMenu from "./MobileMenu";
@@ -10,6 +10,7 @@ import MagneticButton from "@/components/ui/MagneticButton";
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [hovered, setHovered] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -44,16 +45,28 @@ export default function Header() {
             </span>
           </a>
 
-          <nav className="hidden md:flex items-center gap-10">
+          <nav
+            className="hidden md:flex items-center gap-10"
+            onMouseLeave={() => setHovered(null)}
+          >
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 data-cursor="hover"
-                className="relative text-sm tracking-wide text-obsidian-200 hover:text-ivory transition-colors group"
+                onMouseEnter={() => setHovered(link.href)}
+                className="relative text-sm tracking-wide text-obsidian-200 hover:text-ivory transition-colors"
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gold-gradient transition-all duration-300 ease-luxury group-hover:w-full" />
+                <AnimatePresence>
+                  {hovered === link.href ? (
+                    <motion.span
+                      layoutId="nav-underline"
+                      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                      className="absolute -bottom-1 left-0 right-0 h-[1px] bg-gold-gradient"
+                    />
+                  ) : null}
+                </AnimatePresence>
               </a>
             ))}
           </nav>
