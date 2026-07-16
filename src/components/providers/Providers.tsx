@@ -6,6 +6,7 @@ import CustomCursor from "@/components/ui/CustomCursor";
 import MouseGlow from "@/components/ui/MouseGlow";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import Loader from "@/components/ui/Loader";
+import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
 
 export default function Providers({ children }: { children: ReactNode }) {
   return (
@@ -15,6 +16,7 @@ export default function Providers({ children }: { children: ReactNode }) {
       <MouseGlow />
       <CustomCursor />
       {children}
+      <FloatingWhatsApp />
     </SmoothScrollProvider>
   );
 }

@@ -39,7 +39,7 @@ export default function About() {
           >
             <motion.div style={{ y: imageY }} className="absolute inset-0 scale-110">
               <Image
-                src="/images/about/studio.jpg"
+                src="https://images.unsplash.com/photo-1615873968403-89e068629265?q=80&w=1600&auto=format&fit=crop"
                 alt="S.S. Sodhi Interiors design studio craftsmanship"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"

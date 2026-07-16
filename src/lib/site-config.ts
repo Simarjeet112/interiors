@@ -8,7 +8,7 @@ export const siteConfig = {
   whatsappNumber: "919272569524",
   whatsappDefaultMessage:
     "Hi S.S. Sodhi Interiors, I'd like to book a free luxury consultation for my space.",
-  email: "info@sssodhinteriors.com",
+  email: "surendrasinghsodhi127@gmail.com",
 } as const;
 
 export const services = [

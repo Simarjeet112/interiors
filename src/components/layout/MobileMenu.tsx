@@ -2,8 +2,8 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { navLinks } from "@/lib/nav-links";
-import { siteConfig } from "@/lib/site-config";
-import { Phone } from "lucide-react";
+import { siteConfig, getWhatsAppLink } from "@/lib/site-config";
+import { Phone, MessageCircle } from "lucide-react";
 
 interface MobileMenuProps {
   open: boolean;
@@ -60,12 +60,24 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
             variants={item}
             initial="hidden"
             animate="show"
-            className="px-gutter pb-10 flex items-center gap-3 text-obsidian-300"
+            className="px-gutter pb-10 flex flex-col gap-5"
           >
-            <Phone size={16} className="text-gold" />
-            <a href={`tel:+91${siteConfig.phones[0]}`} className="text-sm tracking-wide">
-              +91 {siteConfig.phones[0]}
+            <a
+              href={getWhatsAppLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={onClose}
+              className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-gold-gradient text-obsidian-950 text-xs tracking-[0.15em] uppercase font-medium"
+            >
+              <MessageCircle size={16} strokeWidth={1.75} />
+              Chat on WhatsApp
             </a>
+            <div className="flex items-center gap-3 text-obsidian-300">
+              <Phone size={16} className="text-gold" />
+              <a href={`tel:+91${siteConfig.phones[0]}`} className="text-sm tracking-wide">
+                +91 {siteConfig.phones[0]}
+              </a>
+            </div>
           </motion.div>
         </motion.div>
       )}

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { navLinks } from "@/lib/nav-links";
-import { siteConfig, getWhatsAppLink } from "@/lib/site-config";
+import { getWhatsAppLink } from "@/lib/site-config";
 import MobileMenu from "./MobileMenu";
 import MagneticButton from "@/components/ui/MagneticButton";
 

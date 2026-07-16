@@ -65,7 +65,7 @@ function validate(data: FormData): FormErrors {
 }
 
 const inputClasses =
-  "w-full bg-obsidian-900/60 border border-ivory/10 rounded-sm px-5 py-4 text-sm text-ivory placeholder:text-obsidian-400 focus:outline-none focus:border-gold transition-colors duration-300";
+  "w-full bg-obsidian-900/60 border border-ivory/10 rounded-sm px-5 py-4 text-base sm:text-sm text-ivory placeholder:text-obsidian-400 focus:outline-none focus:border-gold transition-colors duration-300";
 
 const labelClasses =
   "block text-xs tracking-[0.2em] uppercase text-obsidian-300 mb-2";
@@ -186,7 +186,7 @@ export default function Contact() {
                   </p>
                   <div className="flex flex-col gap-1">
                     {siteConfig.phones.map((phone) => (
-                      
+                      <a
                         key={phone}
                         href={"tel:+91" + phone}
                         className="text-ivory hover:text-gold transition-colors duration-300 text-sm"
@@ -206,7 +206,7 @@ export default function Contact() {
                   <p className="text-xs tracking-[0.2em] uppercase text-obsidian-300 mb-2">
                     Email Us
                   </p>
-                  
+                  <a
                     href={"mailto:" + siteConfig.email}
                     className="text-ivory hover:text-gold transition-colors duration-300 text-sm"
                   >
@@ -223,7 +223,7 @@ export default function Contact() {
                   <p className="text-xs tracking-[0.2em] uppercase text-obsidian-300 mb-2">
                     WhatsApp
                   </p>
-                  
+                  <a
                     href={getWhatsAppLink()}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -233,6 +233,19 @@ export default function Contact() {
                   </a>
                 </div>
               </div>
+
+              <motion.a
+                href={getWhatsAppLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cursor="hover"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="mt-2 inline-flex items-center justify-center gap-3 border border-gold/40 px-6 py-4 text-xs tracking-[0.15em] uppercase text-gold hover:bg-gold hover:text-obsidian-950 transition-colors duration-300"
+              >
+                <MessageCircle size={16} strokeWidth={1.75} />
+                Chat on WhatsApp
+              </motion.a>
             </div>
           </motion.div>
 
